@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import {checkout} from '../../checkout'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,20 @@ export default function Home() {
               height={300}
             />
             <p>Very expensive art piece 1</p>
+            <button style={{margin : '0.2em' , width : '100%' , background : 'blue' , color : 'white'}} onClick={( () => {
+              
+              checkout(
+                {
+                  lineItems : [
+                    {
+                    price: "price_1MeC44SDocfmbKjeUgbdjoc6",
+                    quantity : 1
+                  }
+                  ]
+                })
+
+            })}
+            > BUY!</button>
             
           </div>
           <div style={{margin : '1rem'}}>
@@ -36,6 +51,20 @@ export default function Home() {
               height={300}
             />
             <p>Very expensive art piece 2</p>
+            <button style={{margin : '0.2em' , width : '100%' , background : 'blue' , color : 'white'}} onClick={( () => {
+              
+              checkout(
+                {
+                  lineItems : [
+                    {
+                    price: "price_1MeC4xSDocfmbKjen5NyxMH1",
+                    quantity : 1
+                  }
+                  ]
+                })
+
+            })}
+            > BUY!</button>
           </div>
         </div>
       </main>
